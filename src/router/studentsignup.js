@@ -3,7 +3,6 @@ const studentdata = require("../model/users")
 const router = express.Router();
 const {generateAuthToken} = require('../utils/helpers')
 
-
 router.get("/get", async (req, res) => {
   const students = await studentdata.find();
   res.status(200).send(students);
