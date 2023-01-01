@@ -1,31 +1,35 @@
 const mongoose = require("mongoose");
-
 const studentsignupSchema = new mongoose.Schema({
-  name: {
+  firstName: {
     type: String,
-    required: true,
-    max:20,
-    min:4,
   },
-  address: {
+  lastName: {
     type: String,
-    required: true,
-    max:30,
-    min:2,
+  },
+  fatherName: {
+    type: String,
+  },
+  gender: {
+    type: String,
+  },
+  dob: {
+    type: String,
+  },
+  state: {
+    type: String,
+  },
+  city: {
+    type: String,
+  },
+  course: {
+    type: String,
   },
   email: {
     type: String,
-    required: true,
-    unique:true,
   },
-  password:{
+  password: {
     type: String,
-    required: true,
-    max:20,
-    min:4,
   }
 });
-
 const studentdata = mongoose.model("studentsignupdata", studentsignupSchema);
-
 module.exports = studentdata;
