@@ -27,11 +27,16 @@ router.post("/login", async (req, res) => {
     username: user.username,
     email: user.email
   });
+  
   const data = {
     username: user.username,
-    email: user.email
+    email: user.email,
+    // token: user.token
   }
-  console.log("this is your tokens",token)
+  
+  await studentdata.findOneAndUpdate({_id: user._id},{token : token})
+  //console.log("this is your tokens",token)
+
   res.status(200).send({ message: "success", token, data });
 });
 //Get User by ID and Edit

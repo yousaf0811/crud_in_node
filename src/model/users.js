@@ -29,7 +29,8 @@ const studentsignupSchema = new mongoose.Schema({
   },
   password: {
     type: String,
-  }
+  },
+  token:String
 });
 const studentdata = mongoose.model("studentsignupdata", studentsignupSchema);
 module.exports = studentdata;
