@@ -31,7 +31,6 @@ router.post("/login", async (req, res) => {
   const data = {
     username: user.username,
     email: user.email,
-    // token: user.token
   }
   
   await studentdata.findOneAndUpdate({_id: user._id},{token : token})
